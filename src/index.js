@@ -43,7 +43,7 @@ app.get('/users/id/:id', (req, res) => {
         if (!user) {
             // If no user is found
             console.log(chalk.red('ERROR: Unable to find user with given ID'))
-            return res.status(404).send()
+            return res.status(404).send({e:'err'})
         }
         console.log(chalk.green('Found user with given ID'))
         res.send(user)
@@ -61,7 +61,7 @@ app.get('/users/username/:username', (req, res) => {
         if (!user) {
             // no user found
             console.log(chalk.red('ERROR: No user with given username found'))
-            return res.status(404).send()
+            return res.status(404).send({e:'err'})
         }
         console.log(chalk.green('Found user with given username'))
         res.send(user)
