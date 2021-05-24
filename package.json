@@ -1,0 +1,27 @@
+{
+  "name": "Pokemon-TCG-Tracker",
+  "version": "1.0.0",
+  "description": "This web application helps users keep track of their Pokemon trading card collection online by finding cards that they own and adding it to their virtual deck.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaghibA/Pokemon-TCG-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaghibA/Pokemon-TCG-Tracker/issues"
+  },
+  "homepage": "https://github.com/RaghibA/Pokemon-TCG-Tracker#readme",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.10",
+    "validator": "^13.6.0"
+  }
+}
