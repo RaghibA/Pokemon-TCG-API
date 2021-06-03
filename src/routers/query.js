@@ -4,9 +4,10 @@ const cardQuery = require('../utils/card-query')
 
 router.get('/search', (req, res) => {
     if (!req.body.search) { return res.status(404).send() }
-    res.send()
-    cards = cardQuery(req.body.search)
-    console.log(cards)
+    cardQuery(req.body.search, (err, data) => {
+        if (err) { res.status(404).send() }
+        else { res.send(data) }
+    })
 })
 
 module.exports = router

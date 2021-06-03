@@ -3,7 +3,7 @@ const config = require('./config')
 const request = require('request')
 
 
-const findCards = (query) => {
+const findCards = (query, callback) => {
     pokemon.configure({apiKey: config.key})
 
     // split query
@@ -13,14 +13,14 @@ const findCards = (query) => {
         pokemon.card.where({ q: `name:${parsedQuery[0]} (subtypes:${parsedQuery[1]})`, pageSize: 10, page: 1})
         .then((results) => {
             if (results) {
-                console.log(results.data)
+                callback(undefined, results.data)
             }
         })
     } else {
         pokemon.card.where({ q: `name:${parsedQuery[0]}`, pageSize: 10, page: 1})
         .then((results) => {
             if (results) {
-                console.log(results.data)
+                callback(undefined, results.data)
             }
         })
     }
