@@ -21,7 +21,7 @@ router.post('/deck/add', auth, async (req, res) => {
         ...req.body,
         owner: req.user._id
     })
-    
+
     try {
         await card.save()
         res.status(200).send(card)
@@ -40,6 +40,20 @@ router.get('/deck', auth, async (req, res) => {
         res.send(cards)
     } catch (e) {
         res.status(500).send(e)
+    }
+})
+
+// delete cards
+router.delete('/deck/remove/:id', auth, async (req, res) => {
+    const cardId = req.params.id
+    try {
+        const card = await Card.findOneAndDelete({ _id: cardId })
+        if (!card) {
+            return res.status(400).send()
+        }
+        res.send(card)
+    } catch (e) {
+        return res.status(400).send(e)
     }
 })
 
