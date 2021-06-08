@@ -34,4 +34,28 @@ router.get('/users/me', auth, async (req, res) => {
     res.send(req.user) // from auth
 })
 
+// Logout user
+router.post('/users/logout', auth, async (req, res) => {
+    try {
+        req.user.tokens = req.user.tokens.filter((token) => {
+            return token.token !== req.token // filter out currently used token
+        })
+        await req.user.save()
+        res.send()
+    } catch (e) {
+        res.status(500).send()
+    }
+})
+
+// delete user
+router.delete('/users/me', auth, async (req,res) => {
+  try {
+    await req.user.remove()
+      
+    res.send(req.user)
+  } catch (e) {
+    res.status(500).send()
+  }
+})
+
 module.exports = router

@@ -36,6 +36,24 @@ const userSchema = new mongoose.Schema({
     }]
 })
 
+// Virtual type for users cards
+userSchema.virtual('cards', {
+    ref: 'Card',
+    localField: '_id',
+    foreignField: 'owner'
+})
+
+// Hide confidential fields
+userSchema.methods.toJSON = function () {
+    const user = this
+    const userObject = user.toObject()
+
+    delete userObject.password
+    delete userObject.tokens
+
+    return userObject
+}
+
 //! Authenticate user
 // create auth token
 userSchema.methods.generateAuthToken = async function () {

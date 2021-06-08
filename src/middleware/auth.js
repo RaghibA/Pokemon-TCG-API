@@ -10,12 +10,15 @@ const auth = async (req, res, next) => {
             'tokens.token': token
         })
 
-        if (!user) { throw new Error() }
-        
+        if (!user) {
+            throw new Error()
+        }
+
+        req.token = token // for logout
         req.user = user
         next()
     } catch (e) {
-        res.status(401).send({error: 'Authenticate user.'})
+        res.status(401).send({error: 'Please authenticate.'})       
     }
 }
 
