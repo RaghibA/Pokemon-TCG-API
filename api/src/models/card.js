@@ -6,7 +6,7 @@ const Card = mongoose.model('Card', {
         required: true
     },
     types: {
-        type: String
+        type: Array
     },
     value: {
         type: Number

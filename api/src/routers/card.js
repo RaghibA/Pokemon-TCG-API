@@ -13,33 +13,21 @@ router.get('/search', async (req, res) => {
     })
 })
 
-// add cards to deck by card id
-router.post('/deck/add/:id', auth, async (req, res) => {
+// add cards to deck
+router.post('/deck/add', auth, async (req, res) => {
     if (!req.body) { return res.status(401).send({ error: 'No request body.' }) }
-    const cardId = req.params.id
 
-    cardQuery.findCardById(cardId, (err, card) => {
-        if (err) {
-            console.log(err)
-            res.status(400).send(err)
-        } else {
-            console.log(card)
-            res.send(card)
-        }
+    const card = new Card({
+        ...req.body,
+        owner: req.user._id
     })
-    // const card = new Card({
-    //     name: _card.name,
-    //     types: _card.types,
 
-    //     owner: req.user._id
-    // })
-
-    // try {
-    //     await card.save()
-    //     res.status(200).send(card)
-    // } catch (e) {
-    //     res.status(400).send(e)
-    // }
+    try {
+        await card.save()
+        res.status(200).send(card)
+    } catch (e) {
+        res.status(400).send(e)
+    }
 })
 
 // get users deck
