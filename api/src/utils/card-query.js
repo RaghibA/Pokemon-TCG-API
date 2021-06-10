@@ -26,4 +26,17 @@ const findCards = (query, callback) => {
     }
 }
 
-module.exports = findCards
+const findCardById = (id, callback) => {
+    pokemon.configure({ apiKey: config.key })
+
+    pokemon.card.find(id)
+        .then((card, e) => {
+            if (card) {
+                callback(undefined, card)
+            } else {
+                callback(e, undefined)
+            }
+        })
+}
+
+module.exports = {findCards, findCardById}

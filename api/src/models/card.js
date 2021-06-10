@@ -5,7 +5,7 @@ const Card = mongoose.model('Card', {
         type: String,
         required: true
     },
-    pokemon_type: {
+    types: {
         type: String
     },
     value: {
