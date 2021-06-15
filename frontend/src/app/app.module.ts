@@ -3,16 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeckComponent } from './deck/deck.component';
+import { CardSearchComponent } from './card-search/card-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuBarComponent
+    DeckComponent,
+    CardSearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
