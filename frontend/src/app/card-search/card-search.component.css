@@ -1,0 +1,44 @@
+.pk-card {
+  max-width: 175px;
+}
+
+.inner-card {
+  border-radius: 2%;
+  margin-bottom: auto;
+}
+
+.pk-text {
+  font-size: 10px;
+}
+
+.form-container
+{
+  padding-top: 42px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  padding-inline: 10%;
+  padding-bottom: 42px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.form {
+  font-size: 20px;
+}
+
+.content {
+  padding-inline: 10%;
+}
+
+.content > mat-card {
+  margin-bottom: 16px;
+}
+
+.column-label {
+  margin-right: 40px;
+  font-size: 1rem;
+}

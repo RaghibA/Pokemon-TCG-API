@@ -1,1 +1,32 @@
-<p>card-search works!</p>
+<!-- card query -->
+<div class="form-container">
+  <form class="form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Find Pokemon</mat-label>
+      <input type="text" matInput placeholder="Card Name">
+    </mat-form-field>
+  </form>
+</div>
+
+<!-- Store card data -->
+<mat-divider style="padding-bottom: 14px;"></mat-divider>
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="32px grid">
+    <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let num of [1,2,3,4,5,6,7,8,9,10]">
+      <mat-card class="pk-card">
+        <mat-card-header>
+          <mat-card-title>Pikachu</mat-card-title>
+          <mat-card-subtitle>Electric</mat-card-subtitle>
+        </mat-card-header>
+        <img class="inner-card" mat-card-image src="https://images.pokemontcg.io/swsh4/44.png" alt="Photo of Pikachu Card">
+        <mat-card-actions>
+          <button mat-mini-fab color="accent" class="add-btn">
+            <mat-icon>add</mat-icon>
+          </button>
+          <span class="card-spacer"></span>
+          <button mat-button>INFO</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,5 @@
 const pokemon = require('pokemontcgsdk')
 const config = require('./config')
-const request = require('request')
-
 
 const findCards = (query, callback) => {
     pokemon.configure({apiKey: config.key})
@@ -26,4 +24,6 @@ const findCards = (query, callback) => {
     }
 }
 
-module.exports = findCards
+module.exports = {
+  findCards
+}
