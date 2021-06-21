@@ -2,9 +2,11 @@ const pokemon = require('pokemontcgsdk')
 const config = require('./config')
 
 const findCards = (query, callback) => {
+    console.log('Query request');
+
     pokemon.configure({apiKey: config.key})
 
-    // split query
+    // split query 
     parsedQuery = query.split(/\s+/)
     if (parsedQuery.length > 1) {
 

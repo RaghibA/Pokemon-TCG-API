@@ -1,11 +1,15 @@
 const express = require('express')
+const cors = require('cors')
+
 const chalk = require('chalk')
+
 require('./db/mongoose')
 const userRouter = require('./routers/user')
 const cardRouter = require('./routers/card')
 
 // Init express 
 const app = express()
+app.use(cors())
 const port = process.env.PORT || 4040
 
 app.use(express.json())

@@ -5,9 +5,10 @@ const Card = require('../models/card')
 const cardQuery = require('../utils/card-query')
 
 // find cards
-router.get('/search', async (req, res) => {
-    if (!req.body.search) { return res.status(404).send() }
-    cardQuery.findCards(req.body.search, (err, data) => {
+router.get('/search/:name', async (req, res) => {
+    const pokemon = req.params.name
+  
+    cardQuery.findCards(pokemon, (err, data) => {
         if (err) { res.status(400).send() }
         else { res.send(data) }
     })

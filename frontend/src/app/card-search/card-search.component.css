@@ -1,16 +1,3 @@
-.pk-card {
-  max-width: 175px;
-}
-
-.inner-card {
-  border-radius: 2%;
-  margin-bottom: auto;
-}
-
-.pk-text {
-  font-size: 10px;
-}
-
 .form-container
 {
   padding-top: 42px;
@@ -30,6 +17,19 @@ mat-form-field {
   font-size: 20px;
 }
 
+.pk-card {
+  max-width: 175px;
+}
+
+.inner-card {
+  border-radius: 2%;
+  margin-bottom: auto;
+}
+
+.pk-text {
+  font-size: 10px;
+}
+
 .content {
   padding-inline: 10%;
 }
@@ -41,4 +41,11 @@ mat-form-field {
 .column-label {
   margin-right: 40px;
   font-size: 1rem;
+}
+
+.filler-content {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: auto;
 }
