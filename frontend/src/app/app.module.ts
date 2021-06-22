@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatDividerModule } from '@angular/material/divider';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
 
     // Material
     MatCardModule,
@@ -48,7 +50,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatGridListModule,
     FlexLayoutModule,
     MatDividerModule,
-    HttpClientModule
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,7 @@
   margin: auto;
   padding-inline: 10%;
   padding-bottom: 42px;
+  background-color: rgb(228, 228, 228);
 }
 
 mat-form-field {
@@ -34,6 +35,16 @@ mat-form-field {
   padding-right: 2px;
 }
 
+.card-title {
+  font-size: 16px;
+}
+
+.text-oneline ::ng-deep * {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .content {
   padding-inline: 10%;
 }
@@ -52,4 +63,20 @@ mat-form-field {
   text-align: center;
   width: 100%;
   margin: auto;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: 0 2px 1px -1px rgb(129, 129, 129), 
+              0 1px 1px 0 rgb(158, 158, 158), 
+              0 1px 3px 0 rgb(189, 189, 189);
+}
+
+.card-ava{
+  background-color: red;
+  background-size: cover;
+}
+
+.imgs {
+  height: 50px;
+  width: 50px;
 }

@@ -41,18 +41,27 @@
   <div fxLayout="row wrap" fxLayoutGap="32px grid">
     <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let card of cards">
       <mat-card class="pk-card">
-        <mat-card-header>
-          <mat-card-title>{{ card.pokemon }}</mat-card-title>
-          <mat-card-subtitle>{{ card.types[0] }}</mat-card-subtitle>
-        </mat-card-header>
+
+        <!-- <mat-card-header class="text-oneline">
+          <mat-card-title class="card-title">{{ card.pokemon }}</mat-card-title>
+        </mat-card-header> -->
+
         <img *ngIf="card.img != ''" class="inner-card" mat-card-image src={{card.img}} alt="Photo of {{card.pokemon}} Card">
+        
         <mat-card-actions>
-          <button mat-mini-fab color="accent" class="add-btn">
-            <mat-icon>add</mat-icon>
+
+          <button mat-icon-button color="accent" class="card-info-btn">
+            <mat-icon>add_circle</mat-icon>
           </button>
+
           <div fxFlex></div>
-          <button class="card-info-btn" mat-button>INFO</button>
+
+          <button class="card-info-btn" mat-icon-button>
+            <mat-icon>info</mat-icon>
+          </button>
+
         </mat-card-actions>
+
       </mat-card>
     </div>
   </div>

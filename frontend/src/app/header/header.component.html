@@ -1,15 +1,11 @@
 <!-- header -->
-<mat-toolbar class="toolbar" color="primary">
+<mat-toolbar class="mat-elevation-z2" color="primary">
 
   <!-- Site menu -->
   <button [matMenuTriggerFor]="menu" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
+    <mat-icon>line_weight</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon>search</mat-icon>
-      <span>Find Card</span>
-    </button>
     <button mat-menu-item>
       <mat-icon>help</mat-icon>
       <span>About this site</span>
@@ -17,12 +13,20 @@
   </mat-menu>
   <span>PokeTCG</span>
   <span class="header-spacer"></span>
+  
 
 <!-- Account Menu -->
-  <button [matMenuTriggerFor]="menu2" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <button mat-icon-button >
+    <mat-icon>search</mat-icon>
+  </button>
+  <button [matMenuTriggerFor]="menu2" mat-icon-button>
     <mat-icon>account_circle</mat-icon>
   </button>
   <mat-menu #menu2="matMenu">
+    <button mat-menu-item>
+      <mat-icon>view_module</mat-icon>
+      <span>My Deck</span>
+    </button>
     <button mat-menu-item>
       <mat-icon>login</mat-icon>
       <span>Log In</span>

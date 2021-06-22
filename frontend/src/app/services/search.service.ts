@@ -6,7 +6,7 @@ import { Observable } from 'rxjs'
 // Making it injectable creates only one instance of the data
 @Injectable({providedIn: 'root'})
 export class SearchService {
-  baseURL = 'http://192.168.86.96:4040/'
+  baseURL = 'http://localhost:4040/'
 
   // inject http client
   constructor(private http: HttpClient) { }
