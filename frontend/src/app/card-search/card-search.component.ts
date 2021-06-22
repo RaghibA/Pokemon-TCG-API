@@ -13,12 +13,7 @@ import { from } from "rxjs";
 })
 export class CardSearchComponent{
   pokemon = ''
-  cards: pkCard[] = [{
-    pokemon: '',
-    types: [],
-    value: 0,
-    img: ''
-  }]
+  cards: pkCard[] = []
   
   tempCard = {
     pokemon: '',
@@ -35,40 +30,44 @@ export class CardSearchComponent{
 
     //Search Service
     this.searchService.findCards(this.pokemon)
-      .subscribe((element) => {
-
-        console.log(element[0].tcgplayer.prices);
-        
+      .subscribe((response: any) => {
+        response.forEach((element:any)=> {
           // Assign name to card
-          if (element[0].name) {
-            this.tempCard.pokemon = element[0].name
+          if (element.name) {
+            this.tempCard.pokemon = element.name
           } else { this.tempCard.pokemon = '' }
           
           // Assign type to card
-          if (element[0].types) {
-            this.tempCard.types = element[0].types
+          if (element.types) {
+            this.tempCard.types = element.types
           } else { this.tempCard.types = [] }
           
           // Assign value to card
-          if (element[0].tcgplayer.prices.holofoil) {
-            this.tempCard.value = element[0].tcgplayer.prices.holofoil.market
+          if (element.tcgplayer.prices.holofoil) {
+            this.tempCard.value = element.tcgplayer.prices.holofoil.market
           } else { this.tempCard.value = 0 }
           
           // Assign img url to card
-          if (element[0].images.small) {
-            this.tempCard.img = element[0].images.small
+          if (element.images.small) {
+            this.tempCard.img = element.images.small
           } else {
             this.tempCard.img = ''
           }
-        console.log(this.tempCard);
+          
+          // push card to cards
+          this.cards.push(this.tempCard)
+
+          // init temp card
+          this.tempCard = {
+            pokemon: '',
+            types: [],
+            value: 0,
+            img: ''
+          }
       })
-    
-    form.resetForm()
-    this.tempCard = {
-      pokemon: '',
-      types: [],
-      value: 0,
-      img: ''
-    }
+        form.resetForm()
+    });
+
+    this.cards = []
   }
 }

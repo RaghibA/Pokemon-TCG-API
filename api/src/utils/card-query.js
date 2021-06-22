@@ -10,14 +10,14 @@ const findCards = (query, callback) => {
     parsedQuery = query.split(/\s+/)
     if (parsedQuery.length > 1) {
 
-        pokemon.card.where({ q: `name:${parsedQuery[0]} (subtypes:${parsedQuery[1]})`, pageSize: 10, page: 1})
+        pokemon.card.where({ q: `name:${parsedQuery[0]} (subtypes:${parsedQuery[1]})`, pageSize: 20, page: 1})
         .then((results) => {
             if (results) {
                 callback(undefined, results.data)
             }
         })
     } else {
-        pokemon.card.where({ q: `name:${parsedQuery[0]}`, pageSize: 10, page: 1})
+        pokemon.card.where({ q: `name:${parsedQuery[0]}`, pageSize: 20, page: 1})
         .then((results) => {
             if (results) {
                 callback(undefined, results.data)

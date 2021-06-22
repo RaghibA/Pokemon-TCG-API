@@ -30,6 +30,10 @@ mat-form-field {
   font-size: 10px;
 }
 
+.card-info-button {
+  padding-right: 2px;
+}
+
 .content {
   padding-inline: 10%;
 }

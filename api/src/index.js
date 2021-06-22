@@ -17,6 +17,6 @@ app.use(userRouter)
 app.use(cardRouter)
 
 // Listen for connection
-app.listen(port, () => {
+app.listen(port,'192.168.86.96', () => {
     console.log(chalk.green.inverse(`Server is running on port ${port}`))
 })
