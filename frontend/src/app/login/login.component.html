@@ -25,5 +25,7 @@
   </mat-card-actions>
 </mat-card>
 
-<h1>username {{ myUser.username }}</h1>
-<h1>email {{ myUser.email }}</h1>
+<div *ngIf="authenticated == true">
+  <h1>username {{ myUser.username }}</h1>
+  <h1>email {{ myUser.email }}</h1>
+</div>
